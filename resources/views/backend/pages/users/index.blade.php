@@ -19,7 +19,6 @@
               </tr>
             </thead>
             <tbody class="bg-white">
-             
               <tr class="text-gray-700">
                 <td class="px-4 py-3 border">
                   <div class="flex items-center text-sm">
@@ -37,7 +36,6 @@
               </tr>
             </tbody>
           </table>
-
         </div>
       </div>
     </div>
