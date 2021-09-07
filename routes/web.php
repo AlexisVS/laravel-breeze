@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,7 +19,13 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    $users = User::all();
+    return view('dashboard', compact('users'));
 })->middleware(['auth'])->name('dashboard');
 
-require __DIR__.'/auth.php';
+Route::get('/dashboard/users', function () {
+    $users = User::all();
+    return view('backend.pages.users.index',compact('users'));
+})->middleware(['auth'])->name('dashboard-users');
+
+require __DIR__ . '/auth.php';

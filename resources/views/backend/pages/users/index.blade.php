@@ -1,7 +1,7 @@
 <x-app-layout>
   <x-slot name="header">
     <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-      {{ __('Dashboard') }}
+      {{ __('Users') }}
     </h2>
   </x-slot>
 
@@ -19,7 +19,7 @@
               </tr>
             </thead>
             <tbody class="bg-white">
-              @foreach ($users as $user )
+             
               <tr class="text-gray-700">
                 <td class="px-4 py-3 border">
                   <div class="flex items-center text-sm">
@@ -27,17 +27,17 @@
                       <div class="absolute inset-0 rounded-full shadow-inner" aria-hidden="true"></div>
                     </div>
                     <div>
-                      <p class="font-semibold text-black">{{ $user->name }}</p>
-                      <p class="text-xs text-gray-600">{{ $user->nickname }}</p>
+                      <p class="font-semibold text-black">{{ auth()->user()->name }}</p>
+                      <p class="text-xs text-gray-600">{{ auth()->user()->nickname }}</p>
                     </div>
                   </div>
                 </td>
-                <td class="px-4 py-3 text-ms font-semibold border">{{ $user->age }}</td>
-                <td class="px-4 py-3 text-sm border">{{ $user->email }}</td>
+                <td class="px-4 py-3 text-ms font-semibold border">{{ auth()->user()->age }}</td>
+                <td class="px-4 py-3 text-sm border">{{ auth()->user()->email }}</td>
               </tr>
-              @endforeach
             </tbody>
           </table>
+
         </div>
       </div>
     </div>
